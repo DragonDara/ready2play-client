@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="header">
+        <h2>шаг 1/3</h2>
+        <mat-progress-bar mode="determinate" value="34"></mat-progress-bar>
+        <h2 id="header-text">Игровой клуб Mansion</h2>
+        <h2>Чтобы забронировать введите данные</h2>
+    </div>
+    <div class="main">
+        <form action="">
+
+            <label for="name">Имя</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <input matInput placeholder="Али" type="text">
+            </mat-form-field>
+
+            <label for="phone">Номер</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <input matInput placeholder="+7 777 777 77 77" type="text">
+            </mat-form-field>
+
+            <label for="persons">Кол-во персон</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <input matInput placeholder="4" type="number">
+            </mat-form-field>
+
+            <label for="packet">Игровой пакет</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-select placeholder="2+1">
+                    <mat-option value="2+1">2+1</mat-option>
+                    <mat-option value="3+1">3+1</mat-option>
+                    <mat-option value="night">Ночной</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <label for="zone">Зона</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-select placeholder="Bootcamp">
+                    <mat-option value="Bootcamp">Bootcamp</mat-option>
+                    <mat-option value="Standard">Standard</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <label for="time-start">Время начала</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <input matInput type="time" >
+            </mat-form-field>
+
+            <label for="time-end">Время конца</label>
+            <mat-form-field appearance="outline" class="form-group">
+                <input matInput type="time">
+            </mat-form-field>
+
+            <button type="submit">Далее</button>
+        </form>
+    </div>
+</div>

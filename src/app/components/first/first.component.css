@@ -1,0 +1,48 @@
+.container{
+    max-width: 960px;
+    width: 400px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.form-group{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 25px;
+    border-color: #2948e9;
+    background-color: #2948e9;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    background-color: white;
+    color: #2948e9;
+}
+
+.header{
+    text-align: center;
+}
+
+.header h2{
+    color: #a5a5a5;
+}
+
+
+#header-text{
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .container{
+        width: 90%;
+        height: 102%;
+    }
+    
+}
