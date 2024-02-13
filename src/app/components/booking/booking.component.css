@@ -1,48 +1,85 @@
-.container{
-    max-width: 960px;
-    width: 400px;
-    height: 800px;
-    margin: 0 auto;
+.container {
+  max-width: 960px;
+  width: 400px;
+  height: 800px;
+  margin: 0 auto;
 }
 
-.form-group{
-    width: 100%;
+.header {
+  text-align: center;
 }
 
-button{
-    width: 100%;
-    padding: 15px;
-    font-size: large;
-    font-weight: 600;
-    border-radius: 25px;
-    border-color: #2948e9;
-    background-color: #2948e9;
-    color: white;
-    transition-duration: 0.4s;
+.header h2 {
+  color: #a5a5a5;
 }
 
-button:hover{
-    background-color: white;
-    color: #2948e9;
-}
-
-.header{
-    text-align: center;
-}
-
-.header h2{
-    color: #a5a5a5;
-}
-
-
-#header-text{
-    color: black;
+#header-text {
+  color: black;
 }
 
 @media (max-width: 768px) {
-    .container{
-        width: 90%;
-        height: 102%;
-    }
-    
+  .container {
+    width: 90%;
+    height: 102%;
+  }
+}
+
+
+.main{
+  width: 100%;
+  height: auto;
+}
+
+.submit-btn{
+  width: 49%;
+  border-radius: 25px;
+  padding: 15px;
+  border-width: 2px;
+  border-color: #2948e9;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+#back{
+  transition-duration: 0.4s;
+  color: #2948e9;
+  background-color: white;
+}
+
+#next{
+  float: right;
+  transition-duration: 0.4s;
+  background-color: #2948e9;
+  color: white;
+}
+
+#next:hover{
+  background-color: white;
+  color: #2948e9;
+}
+
+#back:hover{
+  background-color: #2948e9;
+  color: white;
+}
+
+.grid-container{
+  width: auto;
+  height: auto;
+  display: grid;
+  overflow: scroll;
+}
+
+.mat-grid-list{
+  width: auto;
+  height: auto;
+}
+
+.mat-grid-tile{
+  text-align: center;
+}
+
+.material-icons{
+  font-size: 20px;
+  color: #000;
 }
