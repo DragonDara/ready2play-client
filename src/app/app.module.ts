@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BookingComponent } from './components/booking/booking.component';
-import { ConfirmComponent } from './components/confirm/confirm.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from './components/pop-up/pop-up.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     AppComponent,
     FirstComponent,
     BookingComponent,
-    ConfirmComponent
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     MatFormField,
     MatInputModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [
     provideClientHydration(),

@@ -1,0 +1,62 @@
+.container{
+    width: 400px;
+    max-width: 960px;
+    height: 500px;
+    text-align: center;
+}
+
+:host{
+    width: 400px;
+    height: 500px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.header{
+    width: 100%;
+}
+
+.header h2{
+    font-weight: lighter;
+}
+
+.slots{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.taken{
+    width: 190px;
+    float: right;
+}
+
+.free{
+    width: 190px;
+    float: left;
+}
+
+.taken p{
+    border: 1px solid #a5a5a5;
+    color: #a5a5a5;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.free p{
+    border: 1px solid #2948e9;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.show{
+    width: 380px;
+    border: 1px solid #2948e9;
+    padding: 10px;
+    border-radius: 20px;
+    color: #2948e9;
+    background-color: white;
+}
