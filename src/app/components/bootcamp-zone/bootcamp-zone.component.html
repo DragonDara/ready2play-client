@@ -1,0 +1,10 @@
+<mat-grid-list cols="7" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let cell of cells">
+      <div class="seat">
+        <svg viewBox="0 0 24 24" width="30" height="30"  (click)="openDialog()">
+          <circle cx="12" cy="12" r="10" fill="blue" />
+          <text x="12" y="16" fill="white" text-anchor="middle" font-size="13px" font-weight="bold">{{cell.text}}</text>
+        </svg>
+      </div>
+    </mat-grid-tile>
+</mat-grid-list>

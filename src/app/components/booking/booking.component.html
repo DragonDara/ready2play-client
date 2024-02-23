@@ -1,25 +1,28 @@
 <div class="container">
   <div class="header">
-    <h2>шаг 2/4</h2>
-    <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+    <h2>шаг 2/3</h2>
+    <mat-progress-bar mode="determinate" value="68"></mat-progress-bar>
     <h2 id="header-text">Выберите место(-а)</h2>
   </div>
 
   <br />
 
   <div class="main">
+    <h1>{{ mode }}</h1>
+
+    <button mat-button class="zone-btn" (click)="changeMode('Standard')">Standard</button>
+    <button mat-button class="zone-btn" (click)="changeMode('Bootcamp')">Bootcamp</button>
     
-    <div class="grid-container">
-      <mat-grid-list cols="7" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let cell of cells">
-          <div class="seat">
-            <svg viewBox="0 0 24 24" width="30" height="30" (click)="openDialog()">
-              <circle cx="12" cy="12" r="10" fill="green" />
-              <text x="12" y="16" fill="white" text-anchor="middle" font-size="13px" font-weight="bold">{{cell.text}}</text>
-            </svg>
-          </div>
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="grid-container" [ngSwitch]="mode">
+      <ng-container *ngSwitchCase="'Bootcamp'">
+        <app-bootcamp-zone></app-bootcamp-zone>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Standard'">
+        <app-standard-zone></app-standard-zone>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <app-standard-zone></app-standard-zone>
+      </ng-container>
     </div>
 
   </div>
@@ -27,7 +30,7 @@
   <br />
 
   <div class="nav">
-    <button class="submit-btn" id="back">Назад</button>
-    <button class="submit-btn" id="next">Далее</button>
+    <button mat-stroked-button class="submit-btn" routerLink="/" id="back">Назад</button>
+    <button mat-stroked-button class="submit-btn" routerLink="/finish" id="next">Далее</button>
   </div>
 </div>

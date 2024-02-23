@@ -1,0 +1,15 @@
+.grid-container{
+    width: auto;
+    height: auto;
+    display: grid;
+    overflow: scroll;
+  }
+  
+  .mat-grid-list{
+    width: auto;
+    height: auto;
+  }
+  
+  .mat-grid-tile{
+    text-align: center;
+  }

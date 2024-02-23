@@ -104,6 +104,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ready2game:build:production",
+              "serveTarget": "ready2game:serve:production"
+            },
+            "development": {
+              "buildTarget": "ready2game:build:development",
+              "serveTarget": "ready2game:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

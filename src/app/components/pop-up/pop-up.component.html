@@ -3,7 +3,7 @@
     <h2>Bootcamp, 1 место</h2>
 </div>
 <div class="slots">
-    <div class="taken">
+    <!--<div class="taken">
         <p>12:00-14:00</p>
         <p>16:00-19:00</p>
         <p>20:00-23:00</p>
@@ -12,8 +12,29 @@
         <p>10:00-12:00</p>
         <p>14:00-16:00</p>
         <p>19:00-20:00</p>
+    </div>-->
+
+    <div class="taken">
+        <mat-list role="list">
+            <mat-list-item role="listitem">12:00-14:00</mat-list-item>
+            <br>
+            <mat-list-item role="listitem">16:00-19:00</mat-list-item>
+            <br>
+            <mat-list-item role="listitem">20:00-23:00</mat-list-item>
+        </mat-list>
     </div>
 
-    <button class="show">Показать брони</button>
+    <div class="free">
+        <mat-list role="list">
+            <mat-list-item role="listitem">10:00-12:00</mat-list-item>
+            <br>
+            <mat-list-item role="listitem">14:00-16:00</mat-list-item>
+            <br>
+            <mat-list-item role="listitem">19:00-20:00</mat-list-item>
+        </mat-list>
+    </div>
+      
+
+    <button mat-stroked-button class="show">Показать все брони</button>
 </div>
 </div>

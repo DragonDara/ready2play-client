@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ready2play-8c017": {
+      "hosting": {
+        "ready2game": [
+          "ready2play-8c017"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ready2play-8c017"
+  }
+}

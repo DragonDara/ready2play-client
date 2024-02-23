@@ -5,11 +5,27 @@
     margin: 0 auto;
 }
 
-.form-group{
-    width: 100%;
+.header{
+    text-align: center;
 }
 
-#next{
+.header h2{
+    color: #a5a5a5;
+}
+
+.accepted{
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.accepted p{
+    color: #a5a5a5;
+    font-size: large;
+}
+
+#finish{
     width: 100%;
     padding: 15px;
     font-size: large;
@@ -21,24 +37,10 @@
     transition-duration: 0.4s;
 }
 
-#next:hover{
+#finish:hover{
     background-color: white;
     color: #2948e9;
 }
-
-.header{
-    text-align: center;
-}
-
-.header h2{
-    color: #a5a5a5;
-}
-
-
-#header-text{
-    color: black;
-}
-
 
 @media (max-width: 768px) {
     .container{

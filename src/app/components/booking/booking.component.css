@@ -24,10 +24,20 @@
   }
 }
 
+.zone-btn{
+  border: 1px solid #2948e9;
+  margin-right: 10px;
+  padding: 10px;
+}
 
 .main{
   width: 100%;
   height: auto;
+}
+
+.main h1{
+  font-weight: lighter;
+  text-align: center;
 }
 
 .submit-btn{
@@ -77,13 +87,4 @@
 
 .mat-grid-tile{
   text-align: center;
-}
-
-.modal{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
 }

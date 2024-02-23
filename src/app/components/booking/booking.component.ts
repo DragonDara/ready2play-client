@@ -11,30 +11,23 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
 })
 export class BookingComponent implements OnInit{
 
+  mode: string = 'Standard'
+
+
   constructor(private dialogRef : MatDialog){}
 
   openDialog(){
     this.dialogRef.open(PopUpComponent)
   }
 
-
-
-  cells: Cell[] = [];
-
   ngOnInit() {
+    this.mode = 'Standard'
 
-
-    for(let i = 1; i <= 70; i++){
-        const cell: Cell ={
-          text: "" + i
-        }
-
-      this.cells.push(cell)
-    }
+    
   }
 
-}
+  changeMode(mode: string){
+    this.mode = mode
+  }
 
-interface Cell {
-  text: string
 }

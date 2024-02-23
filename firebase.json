@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "ready2game",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "europe-west1"
+      }
+    }
+  ]
+}
