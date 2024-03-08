@@ -34,8 +34,9 @@ import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-config';
+import { Firestore } from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-  
 
 
 @NgModule({
@@ -60,20 +61,11 @@ import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-confi
     MatListModule,
     MatButtonModule,
     MatDatepickerModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    provideFirebaseApp(() => initializeApp({"projectId":"ready2play-8c017","appId":"1:325168822825:web:9171268ddf5ad68a02fa38","storageBucket":"ready2play-8c017.appspot.com","apiKey":"AIzaSyCIi2uOMBXU9jF3E-FjW6-Zw3O_ktmL-zY","authDomain":"ready2play-8c017.firebaseapp.com","messagingSenderId":"325168822825"})),
-    provideAuth(() => getAuth()),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    AngularFireModule,
-    FirestoreModule,
-    provideAnalytics(() => getAnalytics()),
-    provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    providePerformance(() => getPerformance()),
-    provideStorage(() => getStorage()),
-    provideRemoteConfig(() => getRemoteConfig()),
-    
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),
@@ -81,6 +73,7 @@ import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-confi
     provideNativeDateAdapter(),
     ScreenTrackingService,
     UserTrackingService
+    
   ],
   bootstrap: [AppComponent]
 })

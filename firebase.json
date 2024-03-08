@@ -1,11 +1,10 @@
 {
-  "hosting": [
-    {
-      "target": "ready2game",
-      "source": ".",
-      "frameworksBackend": {
-        "region": "europe-west1"
-      }
-    }
-  ]
+  "hosting": {
+    "public": "dist/ready2game",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
 }

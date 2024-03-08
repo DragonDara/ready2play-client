@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './finish.component.css'
 })
 export class FinishComponent {
-
+  
 }

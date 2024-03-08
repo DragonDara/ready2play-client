@@ -6,26 +6,26 @@
         <h2>Чтобы забронировать введите данные</h2>
     </div>
     <div class="main">
-        <form (ngSubmit)="submitForm()">
+        <form #f="ngForm" (ngSubmit)="addData(f)">
 
             <label for="name">Имя</label>
             <mat-form-field appearance="outline" class="form-group">
-                <input matInput placeholder="Али" formControlName="name" type="text"  required="">
+                <input matInput placeholder="Али" name="name" type="text"  required="" ngModel>
             </mat-form-field>
 
             <label for="phone">Номер</label>
             <mat-form-field appearance="outline" class="form-group">
-                <input matInput placeholder="+7 777 777 77 77" formControlName="phone" type="text" formControlName="phone" required="">
+                <input matInput placeholder="+7 777 777 77 77" name="phone" type="text" required="" ngModel>
             </mat-form-field>
 
             <label for="persons">Кол-во персон</label>
             <mat-form-field appearance="outline" class="form-group">
-                <input matInput placeholder="4" type="number" formControlName="persons" required="">
+                <input matInput placeholder="4" type="number" name="persons" required="" ngModel>
             </mat-form-field>
 
             <label for="packet">Игровой пакет</label>
             <mat-form-field appearance="outline" class="form-group">
-                <mat-select placeholder="2+1"  formControleName="packet">
+                <mat-select placeholder="2+1"  name="packet" ngModel>
                     <mat-option value="1">1</mat-option>
                     <mat-option value="2+1">2+1</mat-option>
                     <mat-option value="3+2">3+2</mat-option>
@@ -35,7 +35,7 @@
 
             <label for="zone">Зона</label>
             <mat-form-field appearance="outline" class="form-group">
-                <mat-select placeholder="Bootcamp" formControlName="zone">
+                <mat-select placeholder="Bootcamp" name="zone" ngModel>
                     <mat-option value="Bootcamp">Bootcamp</mat-option>
                     <mat-option value="Standard">Standard</mat-option>
                 </mat-select>
@@ -43,24 +43,24 @@
 
             <label for="time-start">Время начала</label>
             <mat-form-field appearance="outline" class="form-group">
-                <input matInput type="time" formControlName="timeStart" >
+                <input matInput type="time" name="timeStart" ngModel>
             </mat-form-field>
 
             <label for="time-end">Время конца</label>
             <mat-form-field appearance="outline" class="form-group">
-                <input matInput type="time" formControlName="timeEnd">
+                <input matInput type="time" name="timeEnd" ngModel>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-group">
                 <mat-label>Выберите день</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="selectedDate">
+                <input matInput [matDatepicker]="picker" name="selectedDate" ngModel>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
               
               
 
-            <button mat-stroked-button id="next" type="submit" routerLink="/booking">Далее</button>
+            <button mat-stroked-button id="next" type="submit">Далее</button>
         </form>
     </div>
 </div>

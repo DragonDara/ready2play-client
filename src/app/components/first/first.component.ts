@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Firestore } from '@angular/fire/firestore';
+import { collection, addDoc } from 'firebase/firestore';
+import { Booking } from '../../model/interfaces/booking';
+import { BookingStatus } from '../../model/enum/booking-status';
 import { Router } from '@angular/router';
-import { FirebaseService } from '../../shared/firebase.service';
-import { error } from 'console';
-
+import { Timestamp } from '@firebase/firestore';
 
 @Component({
   selector: 'app-first',
@@ -13,34 +13,54 @@ import { error } from 'console';
   styleUrl: './first.component.css'
 })
 export class FirstComponent implements OnInit{
-  bookingForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private firebaseService: FirebaseService){
-    this.bookingForm = this.fb.group({
-      name: [''],
-      phone: [''],
-      persons: [''],
-      packet: [''],
-      zone: [''],
-      timeStart: [''],
-      timeEnd: [''],
-      selectedDate: ['']
-    })
-  }
-
-  ngOnInit() {
+  
+  ngOnInit(): void {
     
   }
 
-  submitForm(){
-    if(this.bookingForm.valid){
-      this.firebaseService.saveFromData(this.bookingForm.value)
-        .then(() => {
-          console.log("Form data saved successfuly")
-        })
-        .catch(error => {
-          console.error(error)
-        })
-    }
+  constructor(private firestore: Firestore, private router: Router){}
+
+  combindDateTime(date: Date, time: string): Date {
+
+    const timeParts = time.split(':')
+    const hours = parseInt(timeParts[0], 10)
+    const minutes = parseInt(timeParts[1], 10)
+
+    const combinded = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hours, minutes)
+    return combinded
   }
+
+  addData(f: NgForm): void {
+    
+
+    
+    const booking: Booking = {
+      deviceId: 1,
+      gamingCenterId: '1',
+      id: '', // предполагая, что это уникальный идентификатор
+      phoneNumber: f.value.phone,
+      status: 1,
+      tariffId: 2,
+      timeFrom: this.combindDateTime(new Date(f.value.selectedDate), f.value.timeStart),
+      timeTo: this.combindDateTime(new Date(f.value.selectedDate), f.value.timeEnd),
+      userName: f.value.name,
+      zoneId: '1'
+    };
+
+    const query = collection(this.firestore, 'bookings');
+    addDoc(query, booking)
+      .then(docRef => {
+        booking.id = docRef.id
+        console.log('Booking saved with ID: ', docRef.id);
+        this.router.navigate(['/booking']);
+      })
+      .catch(err => {
+        console.error('Error adding booking: ', err);
+      });
+  }
+  
+  
+
 }
+
+
